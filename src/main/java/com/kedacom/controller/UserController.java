@@ -33,10 +33,12 @@ public class UserController{
     }
     @GetMapping("/all")
     @WebLog
-    public List<User> findAll(){
-        return userService.queryAll();
+    public String findAll(){
+        //return userService.queryAll();
+        return "ok!!";
     }
     @GetMapping("/id/{id}")
+    @WebLog
     public  User findById(@PathVariable int id ){
         return  userService.getById(id);
     }
